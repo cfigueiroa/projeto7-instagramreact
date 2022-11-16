@@ -5,7 +5,7 @@ import { addCircleOutline } from 'ionicons/icons'
 import { heartOutline } from 'ionicons/icons'
 import { personOutline } from 'ionicons/icons'
 
-function FundoMobile() {
+export default function FundoMobile() {
     return (
         <div className="fundo-mobile">
             <IonIcon icon={home} />
@@ -16,5 +16,3 @@ function FundoMobile() {
         </div>
     );
 }
-
-export default FundoMobile;

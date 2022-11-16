@@ -5,7 +5,7 @@ import { heartOutline } from 'ionicons/icons'
 import { personOutline } from 'ionicons/icons'
 import { paperPlaneOutline } from 'ionicons/icons'
 
-function Navbar() {
+export default function Navbar() {
     return (
         <div className="navbar">
             <div className="container">
@@ -41,5 +41,3 @@ function Navbar() {
         </div>
     )
 }
-
-export default Navbar;

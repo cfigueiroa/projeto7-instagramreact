@@ -2,7 +2,7 @@ import Navbar from "./Navbar";
 import Corpo from "./Corpo";
 import FundoMobile from "./FundoMobile";
 
-function App() {
+export default function App() {
     return (
         <>
             <Navbar />
@@ -11,5 +11,3 @@ function App() {
         </>
     )
 }
-
-export default App;
