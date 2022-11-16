@@ -1,9 +1,9 @@
 import { IonIcon } from '@ionic/react';
-import { logoInstagram } from 'ionicons/icons'
-import { compassOutline } from 'ionicons/icons'
-import { heartOutline } from 'ionicons/icons'
-import { personOutline } from 'ionicons/icons'
-import { paperPlaneOutline } from 'ionicons/icons'
+import { logoInstagram } from 'ionicons/icons';
+import { compassOutline } from 'ionicons/icons';
+import { heartOutline } from 'ionicons/icons';
+import { personOutline } from 'ionicons/icons';
+import { paperPlaneOutline } from 'ionicons/icons';
 
 export default function Navbar() {
     return (

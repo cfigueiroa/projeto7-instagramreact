@@ -1,7 +1,10 @@
 import Usuario from './Usuario';
 import Sugestoes from './Sugestoes';
 
-const usuario = "catanacomics"
+const usuario = {
+    usuario: "catanacomics",
+    nome: "Catana"
+}
 
 export default function Sidebar() {
     return (

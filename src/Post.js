@@ -1,11 +1,17 @@
+import { useState } from 'react';
 import { IonIcon } from '@ionic/react';
-import { ellipsisHorizontal } from 'ionicons/icons'
-import { heartOutline } from 'ionicons/icons'
-import { chatbubbleOutline } from 'ionicons/icons'
-import { paperPlaneOutline } from 'ionicons/icons'
-import { bookmarkOutline } from 'ionicons/icons'
+import { ellipsisHorizontal } from 'ionicons/icons';
+import { heartOutline } from 'ionicons/icons';
+import { chatbubbleOutline } from 'ionicons/icons';
+import { paperPlaneOutline } from 'ionicons/icons';
+import { bookmarkOutline } from 'ionicons/icons';
+import { bookmark } from 'ionicons/icons';
 
 export default function Post(props) {
+    const [saved, setSaved] = useState(props.data.saved);
+    function handleClick() {
+        setSaved(!saved);
+    }
     const posts = props.data.map((post) => {
         return (
             <div className="post" key={post.usuario}>
@@ -29,7 +35,7 @@ export default function Post(props) {
                             <IonIcon icon={paperPlaneOutline} />
                         </div>
                         <div>
-                            <IonIcon icon={bookmarkOutline} />
+                            <IonIcon icon={saved ? bookmark : bookmarkOutline} onclick={handleClick} />
                         </div>
                     </div>
                     <div className="curtidas">

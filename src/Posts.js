@@ -5,13 +5,15 @@ const postdata = [
         "usuario": "meowed",
         "img": "gato-telefone",
         "curtidas": "respondeai",
-        "comentarios": "101.523"
+        "comentarios": "101.523",
+        "saved": false
     },
     {
         "usuario": "barked",
         "img": "dog",
         "curtidas": "adorable_animals",
-        "comentarios": "99.159"
+        "comentarios": "99.159",
+        "saved": false
     }
 ]
 

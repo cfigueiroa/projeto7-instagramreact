@@ -1,5 +1,5 @@
 import { IonIcon } from '@ionic/react';
-import { chevronForwardCircle } from 'ionicons/icons'
+import { chevronForwardCircle } from 'ionicons/icons';
 import Story from './Story';
 
 const users = ['9gag', 'meowed', 'barked', 'nathanwpylestrangeplanet', 'wawawicomics', 'respondeai', 'filomoderna', 'memeriagourmet'];
