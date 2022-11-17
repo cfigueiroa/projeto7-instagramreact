@@ -10,51 +10,47 @@ import { bookmark } from 'ionicons/icons';
 
 export default function Post(props) {
 
-    const [saved, setSaved] = useState(props.data.saved);
-    function handleClick() {
-        setSaved(!saved);
-    }
-
     const [liked, setLiked] = useState(false);
     function handleLike() {
         setLiked(!liked);
     }
+    const [saved, setSaved] = useState(false);
+    function handleSave() {
+        setSaved(!saved);
+    }
 
-    const posts = props.data.map((post) => {
-        return (
-            <div className="post" key={post.usuario}>
-                <div className="topo">
-                    <div className="usuario">
-                        <img alt="" src={`assets/img/${post.usuario}.svg`} />
-                        {post.usuario}
+    return props.data.map((element, index) =>
+        <div className="post" key={index}>
+            <div className="topo">
+                <div className="usuario">
+                    <img alt="" src={`assets/img/${element.usuario}.svg`} />
+                    {element.usuario}
+                </div>
+                <div className="acoes">
+                    <IonIcon icon={ellipsisHorizontal} />
+                </div>
+            </div>
+            <div className="conteudo">
+                <img alt="" src={`assets/img/${element.img}.svg`} />
+            </div>
+            <div className="fundo">
+                <div className="acoes">
+                    <div>
+                        <IonIcon onClick={handleLike} icon={liked ? heart : heartOutline} style={liked ? { color: "#ed4956" } : {}} />
+                        <IonIcon icon={chatbubbleOutline} />
+                        <IonIcon icon={paperPlaneOutline} />
                     </div>
-                    <div className="acoes">
-                        <IonIcon icon={ellipsisHorizontal} />
+                    <div>
+                        <IonIcon onClick={handleSave} icon={saved ? bookmark : bookmarkOutline} />
                     </div>
                 </div>
-                <div className="conteudo">
-                    <img alt="" src={`assets/img/${post.img}.svg`} />
-                </div>
-                <div className="fundo">
-                    <div className="acoes">
-                        <div>
-                            <IonIcon icon={liked ? heart : heartOutline} style={liked ? { color: "#ed4956" } : {}} onClick={handleLike} />
-                            <IonIcon icon={chatbubbleOutline} />
-                            <IonIcon icon={paperPlaneOutline} />
-                        </div>
-                        <div>
-                            <IonIcon icon={saved ? bookmark : bookmarkOutline} onclick={handleClick} />
-                        </div>
-                    </div>
-                    <div className="curtidas">
-                        <img alt="" src={`assets/img/${post.curtidopor}.svg`} />
-                        <div className="texto">
-                            Curtido por <strong>{post.curtidopor}</strong> e <strong>outras {post.curtidas / 1000} pessoas</strong>
-                        </div>
+                <div className="curtidas">
+                    <img alt="" src={`assets/img/${element.curtidopor}.svg`} />
+                    <div className="texto">
+                        Curtido por <strong>{element.curtidopor}</strong> e <strong>outras {element.curtidas / 1000} pessoas</strong>
                     </div>
                 </div>
             </div>
-        )
-    })
-    return posts
+        </div>
+    )
 }

@@ -14,6 +14,7 @@ export default function Usuario(props) {
         const novaImg = prompt("Qual a nova imagem? Imagem atual: " + foto);
         setFoto(novaImg);
     }
+    
     return (
         <div className="usuario">
             <img alt="" src={foto} onClick={handleImg} />

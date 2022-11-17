@@ -1,15 +1,12 @@
 export default function Story(props) {
-    const stories = props.data.map((element) => {
-        return (
-            <div className="story" key={element}>
-                <div className="imagem">
-                    <img alt="" src={`assets/img/${element}.svg`} />
-                </div>
-                <div className="usuario">
-                    {element}
-                </div>
+    return props.data.map((element, index) =>
+        <div className="story" key={index}>
+            <div className="imagem">
+                <img alt="" src={`assets/img/${element}.svg`} />
             </div>
-        )
-    })
-    return <>{stories}</>
+            <div className="usuario">
+                {element}
+            </div>
+        </div>
+    )
 }
