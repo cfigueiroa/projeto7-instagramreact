@@ -4,23 +4,25 @@ const postdata = [
     {
         "usuario": "meowed",
         "img": "gato-telefone",
-        "curtidas": "respondeai",
-        "comentarios": "101.523",
-        "saved": false
+        "curtidopor": "respondeai",
+        "curtidas": 101523,
+        "saved": false,
+        "liked": false
     },
     {
         "usuario": "barked",
         "img": "dog",
-        "curtidas": "adorable_animals",
-        "comentarios": "99.159",
-        "saved": false
+        "curtidopor": "adorable_animals",
+        "curtidas": 99159,
+        "saved": false,
+        "liked": false
     }
 ]
 
 export default function Posts() {
     return (
         <div className="posts">
-            <Post data={postdata}/>
+            <Post data={postdata} />
         </div>
     )
 }

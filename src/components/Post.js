@@ -2,16 +2,24 @@ import { useState } from 'react';
 import { IonIcon } from '@ionic/react';
 import { ellipsisHorizontal } from 'ionicons/icons';
 import { heartOutline } from 'ionicons/icons';
+import { heart } from 'ionicons/icons';
 import { chatbubbleOutline } from 'ionicons/icons';
 import { paperPlaneOutline } from 'ionicons/icons';
 import { bookmarkOutline } from 'ionicons/icons';
 import { bookmark } from 'ionicons/icons';
 
 export default function Post(props) {
+
     const [saved, setSaved] = useState(props.data.saved);
     function handleClick() {
         setSaved(!saved);
     }
+
+    const [liked, setLiked] = useState(false);
+    function handleLike() {
+        setLiked(!liked);
+    }
+
     const posts = props.data.map((post) => {
         return (
             <div className="post" key={post.usuario}>
@@ -30,7 +38,7 @@ export default function Post(props) {
                 <div className="fundo">
                     <div className="acoes">
                         <div>
-                            <IonIcon icon={heartOutline} />
+                            <IonIcon icon={liked ? heart : heartOutline} style={liked ? { color: "#ed4956" } : {}} onClick={handleLike} />
                             <IonIcon icon={chatbubbleOutline} />
                             <IonIcon icon={paperPlaneOutline} />
                         </div>
@@ -39,9 +47,9 @@ export default function Post(props) {
                         </div>
                     </div>
                     <div className="curtidas">
-                        <img alt="" src={`assets/img/${post.curtidas}.svg`} />
+                        <img alt="" src={`assets/img/${post.curtidopor}.svg`} />
                         <div className="texto">
-                            Curtido por <strong>{post.curtidas}</strong> e <strong>outras {post.comentarios} pessoas</strong>
+                            Curtido por <strong>{post.curtidopor}</strong> e <strong>outras {post.curtidas / 1000} pessoas</strong>
                         </div>
                     </div>
                 </div>
