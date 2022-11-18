@@ -10,7 +10,7 @@ export default function Posts() {
 
     return (
         <div className="posts">
-            {postdata.map(p => <Post data={p} />)}
+            {postdata.map(p => <Post data={p} key={p.id} />)}
         </div>
     )
 }
