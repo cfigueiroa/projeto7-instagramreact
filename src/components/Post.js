@@ -10,38 +10,39 @@ import { bookmark } from 'ionicons/icons';
 
 export default function Post(props) {
 
-    const [liked, setLiked] = useState(false);
-    const [saved, setSaved] = useState(false);
+    const { id, usuario, img, curtidopor, curtidas, saved, liked } = props.data;
+    const [likeds, setLikeds] = useState(saved);
+    const [saveds, setSaveds] = useState(liked);
 
-    return props.data.map((element, index) =>
-        <div className="post" key={index}>
+    return (
+        <div className="post" key={id}>
             <div className="topo">
                 <div className="usuario">
-                    <img alt="" src={`assets/img/${element.usuario}.svg`} />
-                    {element.usuario}
+                    <img alt="" src={`assets/img/${usuario}.svg`} />
+                    {usuario}
                 </div>
                 <div className="acoes">
                     <IonIcon icon={ellipsisHorizontal} />
                 </div>
             </div>
             <div className="conteudo">
-                <img alt="" src={`assets/img/${element.img}.svg`} />
+                <img alt="" src={`assets/img/${img}.svg`} />
             </div>
             <div className="fundo">
                 <div className="acoes">
                     <div>
-                        <IonIcon onClick={() => setLiked(() => !liked)} icon={liked ? heart : heartOutline} style={liked ? { color: "#ed4956" } : {}} />
+                        <IonIcon onClick={() => setLikeds(() => !likeds)} icon={likeds ? heart : heartOutline} style={likeds ? { color: "#ed4956" } : {}} />
                         <IonIcon icon={chatbubbleOutline} />
                         <IonIcon icon={paperPlaneOutline} />
                     </div>
                     <div>
-                        <IonIcon onClick={() => setSaved(() => !saved)} icon={saved ? bookmark : bookmarkOutline} />
+                        <IonIcon onClick={() => setSaveds(() => !saveds)} icon={saveds ? bookmark : bookmarkOutline} />
                     </div>
                 </div>
                 <div className="curtidas">
-                    <img alt="" src={`assets/img/${element.curtidopor}.svg`} />
+                    <img alt="" src={`assets/img/${curtidopor}.svg`} />
                     <div className="texto">
-                        Curtido por <strong>{element.curtidopor}</strong> e <strong>outras {element.curtidas / 1000} pessoas</strong>
+                        Curtido por <strong>{curtidopor}</strong> e <strong>outras {curtidas / 1000} pessoas</strong>
                     </div>
                 </div>
             </div>
