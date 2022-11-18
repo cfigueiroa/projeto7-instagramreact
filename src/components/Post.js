@@ -11,13 +11,7 @@ import { bookmark } from 'ionicons/icons';
 export default function Post(props) {
 
     const [liked, setLiked] = useState(false);
-    function handleLike() {
-        setLiked(!liked);
-    }
     const [saved, setSaved] = useState(false);
-    function handleSave() {
-        setSaved(!saved);
-    }
 
     return props.data.map((element, index) =>
         <div className="post" key={index}>
@@ -36,12 +30,12 @@ export default function Post(props) {
             <div className="fundo">
                 <div className="acoes">
                     <div>
-                        <IonIcon onClick={handleLike} icon={liked ? heart : heartOutline} style={liked ? { color: "#ed4956" } : {}} />
+                        <IonIcon onClick={() => setLiked(() => !liked)} icon={liked ? heart : heartOutline} style={liked ? { color: "#ed4956" } : {}} />
                         <IonIcon icon={chatbubbleOutline} />
                         <IonIcon icon={paperPlaneOutline} />
                     </div>
                     <div>
-                        <IonIcon onClick={handleSave} icon={saved ? bookmark : bookmarkOutline} />
+                        <IonIcon onClick={() => setSaved(() => !saved)} icon={saved ? bookmark : bookmarkOutline} />
                     </div>
                 </div>
                 <div className="curtidas">
