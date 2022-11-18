@@ -27,12 +27,12 @@ export default function Post(props) {
                 </div>
             </div>
             <div className="conteudo">
-                <img data-test="post-image" onDoubleClick={() => likeds === false ? (setLikeds(() => !likeds), setCurtidasCount(() => curtidasCount + 1)) : null} alt="" src={`assets/img/${img}.svg`} />
+                <img data-test="post-image" onDoubleClick={() => !likeds ? (setLikeds(() => !likeds), setCurtidasCount(() => curtidasCount + 1)) : null} alt="" src={`assets/img/${img}.svg`} />
             </div>
             <div className="fundo">
                 <div className="acoes">
                     <div>
-                        <IonIcon data-test="like-post" onClick={() => likeds === false ? (setLikeds(() => !likeds), setCurtidasCount(() => curtidasCount + 1)) : (setLikeds(() => !likeds), setCurtidasCount(() => curtidasCount - 1)) } icon={likeds ? heart : heartOutline} style={likeds ? { color: "#ed4956" } : {}} />
+                        <IonIcon data-test="like-post" onClick={() => !likeds ? (setLikeds(() => !likeds), setCurtidasCount(() => curtidasCount + 1)) : (setLikeds(() => !likeds), setCurtidasCount(() => curtidasCount - 1)) } icon={likeds ? heart : heartOutline} style={likeds ? { color: "#ed4956" } : {}} />
                         <IonIcon icon={chatbubbleOutline} />
                         <IonIcon icon={paperPlaneOutline} />
                     </div>
