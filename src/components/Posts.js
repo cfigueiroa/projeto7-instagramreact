@@ -1,7 +1,5 @@
 import Post from './Post';
 
-
-
 export default function Posts() {
     const postdata = [
         {"id": 0, "usuario": "meowed", "img": "gato-telefone", "curtidopor": "respondeai", "curtidas": 101523, "saved": false, "liked": false},

@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import { IonIcon } from '@ionic/react';
 import { pencil } from 'ionicons/icons';
+import { useState } from 'react';
 
 export default function Usuario(props) {
 

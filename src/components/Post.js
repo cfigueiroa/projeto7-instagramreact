@@ -1,12 +1,6 @@
-import { useState } from 'react';
 import { IonIcon } from '@ionic/react';
-import { ellipsisHorizontal } from 'ionicons/icons';
-import { heartOutline } from 'ionicons/icons';
-import { heart } from 'ionicons/icons';
-import { chatbubbleOutline } from 'ionicons/icons';
-import { paperPlaneOutline } from 'ionicons/icons';
-import { bookmarkOutline } from 'ionicons/icons';
-import { bookmark } from 'ionicons/icons';
+import { bookmark, bookmarkOutline, chatbubbleOutline, ellipsisHorizontal, heart, heartOutline, paperPlaneOutline } from 'ionicons/icons';
+import { useState } from 'react';
 
 export default function Post(props) {
 
@@ -34,7 +28,7 @@ export default function Post(props) {
             <div className="fundo">
                 <div className="acoes">
                     <div>
-                        <IonIcon data-test="like-post" onClick={() => !likeds ? (setLikeds(() => !likeds), setCurtidasCount(() => curtidasCount + 1)) : (setLikeds(() => !likeds), setCurtidasCount(() => curtidasCount - 1)) } icon={likeds ? heart : heartOutline} style={likeds ? { color: "#ed4956" } : {}} />
+                        <IonIcon data-test="like-post" onClick={() => !likeds ? (setLikeds(() => !likeds), setCurtidasCount(() => curtidasCount + 1)) : (setLikeds(() => !likeds), setCurtidasCount(() => curtidasCount - 1))} icon={likeds ? heart : heartOutline} style={likeds ? { color: "#ed4956" } : {}} />
                         <IonIcon icon={chatbubbleOutline} />
                         <IonIcon icon={paperPlaneOutline} />
                     </div>

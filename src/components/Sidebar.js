@@ -1,5 +1,5 @@
-import Usuario from './Usuario';
 import Sugestoes from './Sugestoes';
+import Usuario from './Usuario';
 
 const usuario = {
     usuario: "catanacomics",

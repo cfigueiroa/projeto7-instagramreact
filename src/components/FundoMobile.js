@@ -1,9 +1,5 @@
 import { IonIcon } from '@ionic/react';
-import { home } from 'ionicons/icons';
-import { searchOutline } from 'ionicons/icons';
-import { addCircleOutline } from 'ionicons/icons';
-import { heartOutline } from 'ionicons/icons';
-import { personOutline } from 'ionicons/icons';
+import { addCircleOutline, heartOutline, home, personOutline, searchOutline } from 'ionicons/icons';
 
 export default function FundoMobile() {
     return (
