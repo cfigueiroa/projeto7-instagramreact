@@ -14,6 +14,7 @@ export default function Post(props) {
     const [likeds, setLikeds] = useState(saved);
     const [saveds, setSaveds] = useState(liked);
     const [curtidasCount, setCurtidasCount] = useState(curtidas);
+    const [hearts, setHearts] = useState(false);
 
     return (
         <div data-test="post" className="post" key={id}>
@@ -27,7 +28,8 @@ export default function Post(props) {
                 </div>
             </div>
             <div className="conteudo">
-                <img data-test="post-image" onDoubleClick={() => !likeds ? (setLikeds(() => !likeds), setCurtidasCount(() => curtidasCount + 1)) : null} alt="" src={`assets/img/${img}.svg`} />
+                {hearts && <IonIcon icon={heart} className="heart" />}
+                <img data-test="post-image" onDoubleClick={() => !likeds ? (setLikeds(() => !likeds), setCurtidasCount(() => curtidasCount + 1), setHearts(() => true, setTimeout(() => setHearts(() => false), 500))) : setHearts(() => true, setTimeout(() => setHearts(() => false), 1000))} alt="" src={`assets/img/${img}.svg`} />
             </div>
             <div className="fundo">
                 <div className="acoes">
