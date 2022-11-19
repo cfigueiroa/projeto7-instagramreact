@@ -10,5 +10,5 @@ export default function Sugestao(props) {
             </div>
             <div className="seguir">Seguir</div>
         </div>
-    )
+    );
 }

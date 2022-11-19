@@ -1,26 +1,25 @@
 .conteudo {
   position: relative;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
 }
 
 .heart {
   color: #fff;
   font-size: 128px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
   animation-name: s2;
   animation-duration: 0.3s;
 }
 
 @keyframes s2 {
     from {
-        -webkit-transform: translate(-50%, -50%) scale(0.2);
-        transform: translate(-50%, -50%) scale(0.2);
+        -webkit-transform: scale(0.2);
+        transform: scale(0.2);
     }
     to {
-        -webkit-transform: translate(-50%, -50%) scale(1);
-        transform: translate(-50%, -50%) scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
 }

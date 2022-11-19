@@ -25,7 +25,12 @@ export default function Post(props) {
                 {hearts && <IonIcon icon={heart} className="heart" />}
                 <img
                     data-test="post-image"
-                    onDoubleClick={() => !likeds ? (setLikeds(() => !likeds), setCurtidasCount(() => curtidasCount + 1), setHearts(() => true, setTimeout(() => setHearts(() => false), 500))) : setHearts(() => true, setTimeout(() => setHearts(() => false), 500))}
+                    onDoubleClick={() => !likeds ? (
+                        setLikeds(() => !likeds),
+                        setCurtidasCount(() => curtidasCount + 1),
+                        setHearts(() => true), setTimeout(() => setHearts(() => false), 500))
+                        :
+                        (setHearts(() => true), setTimeout(() => setHearts(() => false), 500))}
                     alt={img}
                     src={`assets/img/${img}.svg`}
                 />
@@ -35,7 +40,11 @@ export default function Post(props) {
                     <div>
                         <IonIcon
                             data-test="like-post"
-                            onClick={() => !likeds ? (setLikeds(() => !likeds), setCurtidasCount(() => curtidasCount + 1)) : (setLikeds(() => !likeds), setCurtidasCount(() => curtidasCount - 1))}
+                            onClick={() => !likeds ? (
+                                setLikeds(() => !likeds),
+                                setCurtidasCount(() => curtidasCount + 1))
+                                :
+                                setLikeds(() => !likeds, setCurtidasCount(() => curtidasCount - 1))}
                             icon={likeds ? heart : heartOutline}
                             style={likeds ? { color: "#ed4956" } : {}}
                         />
@@ -58,5 +67,5 @@ export default function Post(props) {
                 </div>
             </div>
         </div>
-    )
+    );
 }

@@ -8,5 +8,5 @@ export default function Story(props) {
                 {element}
             </div>
         </div>
-    )
+    );
 }

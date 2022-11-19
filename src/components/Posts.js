@@ -10,5 +10,5 @@ export default function Posts() {
         <div className="posts">
             {postdata.map(p => <Post data={p} key={p.id} />)}
         </div>
-    )
+    );
 }

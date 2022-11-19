@@ -12,5 +12,5 @@ export default function Stories() {
                 <IonIcon icon={chevronForwardCircle} />
             </div>
         </div>
-    )
+    );
 }

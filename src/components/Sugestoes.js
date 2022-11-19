@@ -11,5 +11,5 @@ export default function Sugestoes() {
             </div>
             <Sugestao data={users}/>
         </div>
-    )
+    );
 }
