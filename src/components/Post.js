@@ -14,7 +14,7 @@ export default function Post(props) {
         <div data-test="post" className="post" key={id}>
             <div className="topo">
                 <div className="usuario">
-                    <img alt={usuario} src={`assets/img/${usuario}.svg`} />
+                    <img alt={usuario} src={require(`../assets/img/${usuario}.svg`)} />
                     {usuario}
                 </div>
                 <div className="acoes">
@@ -32,7 +32,7 @@ export default function Post(props) {
                         :
                         (setHearts(() => true), setTimeout(() => setHearts(() => false), 500))}
                     alt={img}
-                    src={`assets/img/${img}.svg`}
+                    src={require(`../assets/img/${img}.svg`)}
                 />
             </div>
             <div className="fundo">
@@ -60,7 +60,7 @@ export default function Post(props) {
                     </div>
                 </div>
                 <div className="curtidas">
-                    <img alt={curtidopor} src={`assets/img/${curtidopor}.svg`} />
+                    <img alt={curtidopor} src={require(`../assets/img/${curtidopor}.svg`)} />
                     <div className="texto">
                         Curtido por <strong>{curtidopor}</strong> e <strong data-test="likes-number">outras {curtidasCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} pessoas</strong>
                     </div>

@@ -2,7 +2,7 @@ export default function Story(props) {
     return props.data.map((element, index) =>
         <div className="story" key={index}>
             <div className="imagem">
-                <img alt="" src={`assets/img/${element}.svg`} />
+                <img alt="element" src={require(`../assets/img/${element}.svg`)} />
             </div>
             <div className="usuario">
                 {element}

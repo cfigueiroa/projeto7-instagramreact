@@ -8,7 +8,7 @@ export default function Navbar() {
                 <div className="logo">
                     <IonIcon icon={logoInstagram} />
                     <div className="separador"></div>
-                    <img alt="" src="assets/img/logo.png" />
+                    <img alt="logo" src={require('../assets/img/logo.png')} />
                 </div>
 
                 <div className="logo-mobile">
@@ -16,7 +16,7 @@ export default function Navbar() {
                 </div>
 
                 <div className="instagram-mobile">
-                    <img alt="" src="assets/img/logo.png" />
+                    <img alt="logo" src={require('../assets/img/logo.png')} />
                 </div>
 
                 <div className="pesquisa">

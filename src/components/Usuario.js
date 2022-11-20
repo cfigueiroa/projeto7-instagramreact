@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export default function Usuario(props) {
 
-    const [foto, setFoto] = useState(`assets/img/${props.data.usuario}.svg`);
+    const [foto, setFoto] = useState(require(`../assets/img/${props.data.usuario}.svg`));
     const [nome, setNome] = useState(props.data.nome);
 
     return (

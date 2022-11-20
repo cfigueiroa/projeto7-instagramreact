@@ -2,7 +2,7 @@ export default function Sugestao(props) {
     return props.data.map((element) =>
         <div className="sugestao" key={element}>
             <div className="usuario">
-                <img alt="" src={`assets/img/${element}.svg`} />
+                <img alt={element} src={require(`../assets/img/${element}.svg`)} />
                 <div className="texto">
                     <div className="nome">{element}</div>
                     <div className="razao">Segue você</div>
