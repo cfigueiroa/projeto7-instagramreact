@@ -9,6 +9,8 @@ export default function Post(props) {
     const [saveds, setSaveds] = useState(liked);
     const [curtidasCount, setCurtidasCount] = useState(curtidas);
     const [hearts, setHearts] = useState(false);
+    const halfSecond = 500;
+    const curtidasCountFormat = curtidasCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
     return (
         <div data-test="post" className="post" key={id}>
@@ -28,9 +30,9 @@ export default function Post(props) {
                     onDoubleClick={() => !likeds ? (
                         setLikeds(() => !likeds),
                         setCurtidasCount(() => curtidasCount + 1),
-                        setHearts(() => true), setTimeout(() => setHearts(() => false), 500))
+                        setHearts(() => true), setTimeout(() => setHearts(() => false), halfSecond))
                         :
-                        (setHearts(() => true), setTimeout(() => setHearts(() => false), 500))}
+                        (setHearts(() => true), setTimeout(() => setHearts(() => false), halfSecond))}
                     alt={img}
                     src={require(`../assets/img/${img}.svg`)}
                 />
@@ -62,7 +64,7 @@ export default function Post(props) {
                 <div className="curtidas">
                     <img alt={curtidopor} src={require(`../assets/img/${curtidopor}.svg`)} />
                     <div className="texto">
-                        Curtido por <strong>{curtidopor}</strong> e <strong data-test="likes-number">outras {curtidasCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} pessoas</strong>
+                        Curtido por <strong>{curtidopor}</strong> e <strong data-test="likes-number">outras {curtidasCountFormat} pessoas</strong>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@ import Usuario from './Usuario';
 const usuario = {
     usuario: "catanacomics",
     nome: "Catana"
-}
+};
 
 export default function Sidebar() {
     return (

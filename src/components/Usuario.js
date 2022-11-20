@@ -14,8 +14,8 @@ export default function Usuario(props) {
                 alt={props.data.usuario}
                 src={foto}
                 onClick={() => {
-                    const f = prompt("Qual a nova imagem? Imagem atual: " + foto)
-                    if (f) { setFoto(f) }
+                    const f = prompt("Qual a nova imagem? Imagem atual: " + foto);
+                    f && setFoto(f);
                 }} />
             <div className="texto">
                 <strong>{props.data.usuario}</strong>
@@ -25,8 +25,8 @@ export default function Usuario(props) {
                         data-test="edit-name"
                         icon={pencil}
                         onClick={() => {
-                            const n = prompt("Qual o novo nome? Nome atual: " + nome)
-                            if (n) { setNome(n) }
+                            const n = prompt("Qual o novo nome? Nome atual: " + nome);
+                            n && setNome(n);
                         }} />
                 </span>
             </div>
